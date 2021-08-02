@@ -106,6 +106,12 @@ int main (void){
         }
         cout<<"        --------\n";
         playTime--;
+		
+		// initializing player win and computerwin and draw to 0
+		computerwin = 0;
+		playerwin = 0;
+		draw = 0;
+		
     }
     //view the played choices
     cout<<"======================================\n";
