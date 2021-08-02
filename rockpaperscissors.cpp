@@ -1,20 +1,42 @@
 #include <iostream>
-
+#include <ctime>
 using namespace std;
 
 int main (void){
-    //variables
+    // declaring and initializing variables
+	// ---------------------------------
+	// value for rock is 0
+	// value for paper is 1
+	// value for scissors is 2
     int rock = 0;
     int paper = 1;
     int scissors = 2;
+	
+	// playerChoice is used to collect the input of playerChoice which is atmost 2
     int playerChoice;
-    bool valueInRange;
+	// computerValue is used to generate the random value between 0 and 2
     int computerValue;
+	
+	// valueInRange is used to check whether the user input for playerChoice is in between 0 and 2
+	bool valueInRange;
+	
+	// playerwin is used to check if player win in the particular round or not
     bool playerwin = 0;
+	// computerwin is used to check if computer win in the particular round or not
     bool computerwin = 0;
+	
+	// playerscore is used to count the player score
+	// if player win adds 2 points
+	// if draw 1 point is added
     int playerScore = 0;
+	// computerwin is used to count the computer score
+	// if computer win adds 2 points
+	// if draw 1 point is added
     int computerScore = 0;
+	// draw is used to verify it is draw or not
     bool draw = 0;
+	
+	// playTime is used to set the no.of rounds
     int playTime = 3;
     cout << "\t\t (0-> rock), (1-> paper), (2-> scissors)\n";
     cout<<"======================================\n";
@@ -34,10 +56,10 @@ int main (void){
         cout<<"----------------------------------\n";
 
         //generate random value between (0 , 3)
-        srand(time(0));
+        srand(time(NULL));
         computerValue = rand()%3;
         
-        /*check who won?? and display result*/
+        //check who won?? and display result
         //rock vs scissors
         if((playerChoice==0) && (computerValue==2)){
             playerwin = 1;
@@ -102,5 +124,4 @@ int main (void){
         cout<<"II\t It was a draw \tII"<<endl;
     }
     cout<<"======================================\n";
-    return 0;
 }
